@@ -2,10 +2,13 @@ from flask import render_template
 from app import app
 
 # Views
-@app.route("/")
+@app.route("/movuie/<movie_id>")
 def index():
 
   '''
   View root page function returns index page and its data
   '''
-  return render_template('index.html')
+
+  message = 'NEWS TODAY!'
+  return render_template('index.html', message = message)
+  
