@@ -49,3 +49,8 @@ def get_news(category):
             vote_average = news_item.get
             vote_count = news_item.get('vote_count')
 
+            if poster:
+                news_object = News(id,title,overview,poster,vote_average,vote_count)
+                news_results.append(m_object)
+
+        return news_results
