@@ -2,7 +2,6 @@ from app import app
 import urllib.request,json
 from .models import news
 
-
 News = news.News
 
 # Getting api key
@@ -30,3 +29,23 @@ def get_news(category):
 
 
     return news_results
+
+    def process_results (news_list):
+        '''
+        function that processes the news result and transform them to a list of objects
+        
+        Args:
+            news_list: a list of dictionaries that contain news details
+
+        returns:
+            news_results: a list of news objects
+        '''
+        news_results = []
+        for news_item in news_list:
+            id = news_item.get
+            title = news_item.get
+            overview = news_item.get
+            poster = news_item.get
+            vote_average = news_item.get
+            vote_count = news_item.get('vote_count')
+
