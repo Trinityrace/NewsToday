@@ -10,16 +10,18 @@ def index():
     View root page function returns index page and its data
     '''
 
-    title = 'Home - WELCOME TO BEST NEWS TODAY REVIEW PAGE ONLINE!'
+  #  title = 'Home - WELCOME TO BEST NEWS TODAY REVIEW PAGE ONLINE!'
 
-# Getting popular news
-    popular_movies = get_news('popular')
-    print(popular_news)
+
+    # Getting popular news
+    popular_news = get_news('popular')
+    upcoming_news = get_news('upcoming')
+    now_showing_news = get_news('now_playing')
     title = 'Home - Welcome to The best News Review Website Online'
-    return render_template('index.html', title = title,popular = popular_news)
+    return render_template('index.html', title = title, popular = popular_news, upcoming = upcoming_news, now_showing = now_showing_news )
 
 
-    return render_template('index.html', title = title)
+    #return render_template('index.html', title = title)
     
     # @app.route('/news/<int:news_id>')  
     # def news(news_id):
