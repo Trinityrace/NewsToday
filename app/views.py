@@ -15,6 +15,7 @@ def index():
 
     # Getting popular news
     popular_news = get_news('popular')
+    # print(popular_news)
     upcoming_news = get_news('upcoming')
     now_showing_news = get_news('now_playing')
     title = 'Home - Welcome to The best News Review Website Online'
