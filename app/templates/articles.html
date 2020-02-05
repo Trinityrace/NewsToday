@@ -1,0 +1,35 @@
+<!-- <h1> NEWS TODAY! {{  id  }} </h1> -->
+{% extends 'base.html' %} {% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 heading">
+            <h1> {{name}} </h1>
+        </div>
+    </div>
+    <div class="row">
+        {% for article in news %}
+        <div class="col-sm-6">
+            <div class="img-box mb-4">
+                <a href={{article.url}} target="_blank">
+                    <img class="thumbnail img-el img-fluid" src={{article.urlToImage}} alt="IMAGE LOADING...">
+                </a>
+            </div>
+            <div class="words">
+                <h4 class="text-bold"> {{article.title}} </h4>
+                <p>Posted by
+                    <span class="text-muted date-author">{{article.author}}</span>
+                    on
+                    <span class="text-muted date-author">{{article.publishedAt}}</span>
+                </p>
+                <p> {{article.description}}...
+                    <a href={{article.url}} target="_blank"><button type="button" class="btn btn-outline-primary">Read more</button></a>
+                </p>
+                <hr>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> {% endblock%}
+© 2020 GitHub, Inc. Trinity.
