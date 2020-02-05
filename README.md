@@ -1,5 +1,5 @@
 # NEWS TODAY
-[![codebeat badge](https://codebeat.co/badges/)](https://codebeat.co/projects/github-com-trinityrace-NewsToday-master)
+[![codebeat badge](https://codebeat.co/badges/985570b0-3819-426f-a080-fe95135784ca)](https://codebeat.co/projects/github-com-trinityrace-newstoday-master)
 
 
 ## Author
