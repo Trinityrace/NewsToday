@@ -1,15 +1,27 @@
-from app import app
-import urllib.request,json
-from .models import news
 
-News = news.News
+import urllib.request, json
+#from .models import news
+from .models import News, Articles
 
-# Getting api key
-api_key = app.config['64281a2732dd4fbba93a0ce3e0352cc5']
+# News = news.News
+# # Getting api key
+# api_key = app.config['64281a2732dd4fbba93a0ce3e0352cc5']
+# # Getting the news base url
+# base_url = app.config['https://newsapi.org/v2/top-headlines?'
+#        'country=us&']
 
-# Getting the news base url
-base_url = app.config['https://newsapi.org/v2/top-headlines?'
-       'country=us&']
+api_key = None
+news_url = None
+articles_url = None
+topheadlines_url = None
+everything_url = None
+everything_search_url = None
+
+def configure_request(app):
+    global api_key, base_url, articles_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWSS_BASE_URL']
+    articles_url = app.config['EVERYTHING_SOURCE_BASE_URL']
 
 def get_news(category):
     '''
@@ -54,3 +66,40 @@ def get_news(category):
                 news_results.append(m_object)
 
         return news_results
+
+def get_articles(news_id, limit):
+    '''
+    Function that gets articles based on the news id
+    '''
+    get_article_location_url = articles_url.format(news_id, limit, api_key)
+
+    with urllib.request.urlopen(get_article_location_url) as url:
+        articles_location_data = url.read()
+        articles_location_response = json.loads(articles_location_data)
+
+        articles_location_results = None
+
+        if articles_location_response['articles']:
+            articles_location_results = process_articles(articles_location_response['articles'])
+
+    return articles_location_results
+
+
+def process_articles(my_articles):
+    '''
+    Function that processes the json results for the articles
+    '''
+    article_location_list = []
+
+    for article in my_articles:
+        author = article.get('author')
+        title = article.get('title')
+        description = article.get('description')
+        url = article.get('url')
+        urlToImage = article.get('urlToImage')
+
+        if urlToImage:
+            article_source_object = Articles(author, title, description, url, urlToImage)
+            article_location_list.append(article_source_object)
+
+    return article_location_list
