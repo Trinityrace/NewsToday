@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Welcome to the best News review website</title>
-    {% endif %}
-  </head>
-  <body>
-    <!-- Content block -->
-    {% block content %}
-
-    {% endblock %}
-    
-  </body>
-</html>
+{% extends "bootstrap/base.html" %} {% block styles %}
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/solar/bootstrap.min.css"
+/>
+{% endblock %} {% include 'navbar.html' %} {% block content %} {% endblock %}
