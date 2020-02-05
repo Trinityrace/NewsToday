@@ -1,4 +1,6 @@
 # NEWS TODAY
+[![codebeat badge](https://codebeat.co/badges/)](https://codebeat.co/projects/github-com-trinityrace-NewsToday-master)
+
 
 ## Author
 [TRINITY](https://github.com/Trinityrace/newstoday)
@@ -26,7 +28,7 @@ Here are the features in summary:
 - input
 * The user can click on any particular list group item to be directed to a separate page containing news highlights curated by the same publisher.
 - output
-*	On clicking the "read more" button, the user is redirected to the main article to read the full story.
+* On clicking the "read more" button, the user is redirected to the main article to read the full article.
 ```
 
 ### Requirements
