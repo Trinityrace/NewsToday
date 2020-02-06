@@ -1,7 +1,7 @@
 from flask import render_template
-from app import main
-from ..request import get_sourrces, get_news
-from models import Sources
+from . import main
+from ..request import get_news, get_articles
+from models import News
 
 # Views
 @main.route('/')
