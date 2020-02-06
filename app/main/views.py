@@ -8,13 +8,13 @@ from models import News
 def index():
     # get general news
 
-    general_news = get_sources('general')
-    business_news = get_sources('business')
-    entertainment_news = get_sources('entertainment')
-    sports_news = get_sources('sports')
-    technology_news = get_sources('technology')
-    science_news = get_sources('science')
-    health_news = get_sources('health')
+    general_news = get_news('general')
+    business_news = get_news('business')
+    entertainment_news = get_news('entertainment')
+    sports_news = get_news('sports')
+    technology_news = get_news('technology')
+    science_news = get_news('science')
+    health_news = get_news('health')
 
 
     title = 'News Today Site'
@@ -30,12 +30,12 @@ def index():
     # title = 'Home - Welcome to The best News Review Website Online'
     # return render_template('index.html', title = title, popular = popular_news, upcoming = upcoming_news, now_showing = now_showing_news )
 
-@main.route('/articles/<source_id>&<int:per_page>')
-def news(source_id, per_page):
+@main.route('/articles/<news_id>&<int:per_page>')
+def articles(articles_id, per_page):
     '''
     Function that returns articles based on their sources
     '''
 
-    news_source = get_articles(source_id, per_page)
-    title = f'{source_id} | All Articles'
-    return render_template('news.html', title=title, name=source_id, news=news_source)
+    articles_source = get_articles(news_id, per_page)
+    title = f'{articles_id} | All Articles'
+    return render_template('articles.html', title=title, name=articles_id, news= articles_source)
