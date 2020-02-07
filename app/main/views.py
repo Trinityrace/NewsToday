@@ -1,5 +1,5 @@
 from flask import render_template
-from . import main
+from .import main
 from ..request import get_news, get_articles
 from models import News
 
