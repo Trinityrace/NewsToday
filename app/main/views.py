@@ -1,14 +1,14 @@
 from flask import render_template,request,redirect,url_for
 from . import main
 from  ..request import get_news, get_articles
-from  . import News
+#from  .. import News
 
 # Views
 @main.route('/')
 def index():
     # get general news
 
-    general_news = get_news('general')
+    general_news = get_news('category')
     business_news = get_news('business')
     entertainment_news = get_news('entertainment')
     sports_news = get_news('sports')

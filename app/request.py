@@ -22,7 +22,7 @@ def configure_request(app):
     print('***base news url***')
     print(base_url)
 
-    articles_url = app.config['EVERYTHING_SOURCE_BASE_URL']
+    articles_url = app.config['EVERYTHING_NEWS_BASE_URL']
     print('***base articles url***')
     print(articles_url)
 
@@ -39,9 +39,9 @@ def get_news(category):
 
         news_results = None
 
-    if get_news_response['news']:
-        news_results_list = get_news_response['news']
-        news_results = process_news(news_results_list)
+        if get_news_response['sources']:
+            news_results_list = get_news_response['sources']
+            news_results = process_news(news_results_list)
 
 
     return news_results
@@ -60,10 +60,10 @@ def process_news (news_list):
         name = news_item.get('name')
         description = news_item.get('description')
         url = news_item.get('url')
-        category = source_item.get('category')
-        language = source_item.get('language')
-        country=source_item.get('country')
-        urlToImage=source_item.get('urlToImage')
+        category = news_item.get('category')
+        language = news_item.get('language')
+        country=news_item.get('country')
+        urlToImage=news_item.get('urlToImage')
        # vote_average = news_item.get('category')
         vote_count = news_item.get('vote_count')
 
