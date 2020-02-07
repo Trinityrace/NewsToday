@@ -1,6 +1,6 @@
 
 import urllib.request, json
-from .models import News, Articles
+from .models import Newws, Articles
 api_key = None
 news_url = None
 base_url = None
@@ -58,18 +58,18 @@ def process_news (news_list):
     for news_item in news_list:
         id = news_item.get('id')
         name = news_item.get('name')
-        description = news_item.get('description')
-        url = news_item.get('url')
-        category = news_item.get('category')
-        language = news_item.get('language')
-        country=news_item.get('country')
-        urlToImage=news_item.get('urlToImage')
+        # description = news_item.get('description')
+        # url = news_item.get('url')
+        # category = news_item.get('category')
+        # language = news_item.get('language')
+        # country=news_item.get('country')
+        # urlToImage=news_item.get('urlToImage')
        # vote_average = news_item.get('category')
         vote_count = news_item.get('vote_count')
 
         #if url:
         #news_object = News(id,name,description,url,category,news_results.append(news_object)
-        news_object = News(id,name,description,url,category,language,country,urlToImage,vote_count)
+        news_object = Newws(id,name)
         news_results.append(news_object)
 
     return news_results

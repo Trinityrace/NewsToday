@@ -1,15 +1,15 @@
-class News:
+class Newws:
     '''
-    News class that defines new objects
+    Newws class that defines new objects
     '''
 
-    def __init__(self, id, name, description, url, category, country):
+    def __init__(self, id, name):
         self.id = id
         self.name = name
-        self.description = description
-        self.url = url
-        self.category = category
-        self.country = country
+        # self.description = description
+        # self.url = url
+        # self.category = category
+        # self.country = country
 
 
 class Articles:

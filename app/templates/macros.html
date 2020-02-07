@@ -1,5 +1,6 @@
-{% macro displayNewsList(news_list) %} {% macro displayNews(category) %} {% for
-category in category %}
+
+{% macro displayNews(category) %} 
+{% for category in General %}
 <div class="card border-primary mb-3 col-md-3 col-xs-12 col-lg-2" >
   <div class="card-header">{{category.name}}</div>
   <div class="card-body">
@@ -15,4 +16,5 @@ category in category %}
   </div>
 </div>
 
-{% endfor %} {% endmacro %}
+{% endfor %}
+{% endmacro %}
