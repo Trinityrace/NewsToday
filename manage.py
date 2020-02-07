@@ -7,7 +7,7 @@ app = create_app('production')
 manager = Manager(app)
 manager.add_command('server', Server)
 
-
+#unittest in manager instance
 @manager.command
 def test():
     '''
@@ -18,5 +18,6 @@ def test():
     unittest.TextTestRunner(verbosity=2).run(tests)
 
 
+#manager.add_command('server', Server)
 if __name__ == '__main__':
     manager.run()
