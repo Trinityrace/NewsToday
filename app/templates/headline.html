@@ -1,0 +1,16 @@
+{% extends 'base.html'%} 
+{%block content%}
+<body>
+<h1>headlines</h1>
+  {%for headline in headlines%}
+  <h3>{{headline.title}}</h3>
+  <h3>{{headline.author}}</h3>
+  <h3>{{headline.description}}</h3>
+  <h3>{{headline.url}}</h3>
+  <h3>{{headline.urlToImage}}</h3>
+  <h3>{{headline.publishedAt}}</h3>
+  <h3>{{headline.content}}</h3>
+
+  {% endfor %}
+</body>
+{% endblock %}
