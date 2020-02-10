@@ -1,20 +1,22 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from  ..request import get_news, get_articles
+from  ..request import get_newws, get_articles
+from app.models import Newws
 #from  .. import News
+
 
 # Views
 @main.route('/')
 def index():
     # get general news
 
-    general_news = get_news('category')
-    business_news = get_news('business')
-    entertainment_news = get_news('entertainment')
-    sports_news = get_news('sports')
-    technology_news = get_news('technology')
-    science_news = get_news('science')
-    health_news = get_news('health')
+    general_news = get_newws('category')
+    business_news = get_newws('business')
+    entertainment_news = get_newws('entertainment')
+    sports_news = get_newws('sports')
+    technology_news = get_newws('technology')
+    science_news = get_newws('science')
+    health_news = get_newws('health')
 
 
     title = 'News Today Site'
@@ -30,12 +32,12 @@ def index():
     # title = 'Home - Welcome to The best News Review Website Online'
     # return render_template('index.html', title = title, popular = popular_news, upcoming = upcoming_news, now_showing = now_showing_news )
 
-@main.route('/articles/<news_id>&<int:per_page>')
-def articles(articles_id, per_page):
+@main.route('/articles/<newws_id>&<int:per_page>')
+def articles(newws_id, per_page):
     '''
     Function that returns articles based on their sources
     '''
 
-    articles_source = get_articles(news_id, per_page)
-    title = f'{articles_id} | All Articles'
-    return render_template('articles.html', title=title, name=articles_id, news= articles_source)
+    news_source = get_articles(newws_id, per_page)
+    title = f'{newws_id} | All Articles'
+    return render_template('articles.html', title=title, name=newws_id, news= news_source)
