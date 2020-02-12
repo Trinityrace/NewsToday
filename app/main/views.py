@@ -15,6 +15,7 @@ def index():
 
 
 # @main.route('/f')
+
 # def indexx():
 #     # get general news
 
