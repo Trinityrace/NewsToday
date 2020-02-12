@@ -8,9 +8,9 @@ from  ..request import get_news
 def index():
     headline_news=get_news()
     print(headline_news)
-    return render_template('index.html',headlines=headline_news)
+    #return render_template('index.html',headlines=headline_news)
 
-    # return render_template('headline.html',headlines=headline_news)
+    return render_template('headline.html',headlines=headline_news)
 
 
 # @main.route('/f')
