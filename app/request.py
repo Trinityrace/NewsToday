@@ -29,6 +29,7 @@ def configure_request(app):
     # print(articles_url)
 
 
+
 def get_news():
     '''
     Function that gets the json response to our url request
