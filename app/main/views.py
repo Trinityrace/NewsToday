@@ -4,6 +4,7 @@ from  ..request import get_news
 #from  .. import News
 
 # Views
+
 @main.route('/')
 def index():
     headline_news=get_news()
