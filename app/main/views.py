@@ -39,12 +39,12 @@ def index():
     # title = 'Home - Welcome to The best News Review Website Online'
     # return render_template('index.html', title = title, popular = popular_news, upcoming = upcoming_news, now_showing = now_showing_news )
 
-# @main.route('/articles/<news_id>&<int:per_page>')
-# def articles(articles_id, per_page):
-#     '''
-#     Function that returns articles based on their sources
-#     '''
+@main.route('/articles/<news_id>&<int:per_page>')
+def articles(articles_id, per_page):
+    '''
+    Function that returns articles based on their sources
+    '''
 
-#     articles_source = get_articles(news_id, per_page)
-#     title = f'{articles_id} | All Articles'
-#     return render_template('articles.html', title=title, name=articles_id, news= articles_source)
+    articles_source = get_articles(news_id, per_page)
+    title = f'{articles_id} | All Articles'
+    return render_template('articles.html', title=title, name=articles_id, news= articles_source)

@@ -66,18 +66,24 @@
             type="button"
             id="dropdownMenu1"
             data-toggle="dropdown"
+            data-target="#dropdown"
             aria-haspopup="true"
             aria-expanded="true"
           >
-            Dropdown
-            <span class="caret"></span>
+            News highlights
+           
+            <span class="navbar-toggler-icon"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Categories</a></li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{{url_for('main.articles',news_id = 'abc-news',per_page='10')}}"
+                >News Today</a></li>
+            <li><a href="#">Technology</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">Country</a></li>
           </ul>
         </div>
         <!-- <button type="button" class="btn btn-secondary navbar-btn">Sign in</button> -->
@@ -112,6 +118,7 @@
           </li>
         </ul>
       </nav>
+      © 2020 GitHub, Inc. Trinity.
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
